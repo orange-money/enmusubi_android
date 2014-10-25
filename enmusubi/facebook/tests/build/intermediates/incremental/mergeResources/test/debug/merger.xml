@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/tests/src/androidTest/res" />
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/tests/build/generated/res/rs/test/debug" />
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/tests/build/generated/res/generated/test/debug" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res" >
+            <file
+                name="ic_launcher"
+                path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res/drawable-ldpi/ic_launcher.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="main"
+                path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res/layout/main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/res/values/strings.xml"
+                qualifiers="" >
+                <string name="app_name" >StatusActivity
+                </string>
+            </file>
+        </source>
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/build/generated/res/rs/release" />
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/build/generated/res/generated/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/TestApp/src/release/res" />
+    </dataSet>
+
+</merger>
