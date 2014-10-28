@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
 
     defaultConfig {
         applicationId "com.orange_money.enmusubi"
-        minSdkVersion 15
-        targetSdkVersion 19
+        minSdkVersion 18
+        targetSdkVersion 20
         versionCode 1
         versionName "1.0"
     }
@@ -21,4 +21,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':facebook')
 }
+
+ANDROID_BUILD_TARGET_SDK_VERSION=20
+ANDROID_BUILD_TOOLS_VERSION=20
+ANDROID_BUILD_SDK_VERSION=20
+ANDROID_BUILD_MIN_SDK_VERSION=18

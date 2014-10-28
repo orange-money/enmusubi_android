@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="2" >
-
-    <dataSet config="main" >
-        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/src/main/assets" />
-    </dataSet>
-    <dataSet config="release" >
-        <source path="/Volumes/DATA/development/lib/facebook-android-sdk/facebook/src/release/assets" />
-    </dataSet>
-
-</merger>
+<merger version="3"><dataSet config="main"><source path="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/facebook/src/main/assets"/></dataSet><dataSet config="release"><source path="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/facebook/src/release/assets"/></dataSet></merger>
