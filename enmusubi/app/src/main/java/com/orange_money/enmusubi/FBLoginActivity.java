@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
-import com.facebook.widget.LoginButton;
 
 
 public class FBLoginActivity extends Activity {
