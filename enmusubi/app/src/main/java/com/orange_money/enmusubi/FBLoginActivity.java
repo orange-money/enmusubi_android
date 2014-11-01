@@ -16,6 +16,7 @@ public class FBLoginActivity extends Activity {
 
     private final static String TAG = "FBLoginActivity";
 
+
     private UiLifecycleHelper uiHelper;
 
     private Session.StatusCallback callback = new Session.StatusCallback() {
@@ -24,7 +25,6 @@ public class FBLoginActivity extends Activity {
             onSessionStateChange(session, state, exception);
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,10 @@ public class FBLoginActivity extends Activity {
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
             Log.i(TAG, "Logged in...");
+            //ログインに成功するとMain画面へ遷移
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+            finish();
         } else if (state.isClosed()) {
             Log.i(TAG, "Logged out...");
         }
