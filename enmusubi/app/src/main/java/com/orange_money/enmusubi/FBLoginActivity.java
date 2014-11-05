@@ -7,9 +7,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.facebook.Request;
+import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
+import com.facebook.model.GraphUser;
+import com.facebook.widget.LoginButton;
+
+import java.util.Arrays;
 
 
 public class FBLoginActivity extends Activity {
@@ -18,6 +24,7 @@ public class FBLoginActivity extends Activity {
 
 
     private UiLifecycleHelper uiHelper;
+    private GraphUser mGraphUser;
 
     private Session.StatusCallback callback = new Session.StatusCallback() {
         @Override
@@ -29,15 +36,34 @@ public class FBLoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fblogin);
+        //
+        LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
+        authButton.setPublishPermissions(Arrays.asList("user_education_history"));
 
         uiHelper = new UiLifecycleHelper(this, callback);
         uiHelper.onCreate(savedInstanceState);
     }
 
 
-    private void onSessionStateChange(Session session, SessionState state, Exception exception) {
+    private void onSessionStateChange(final Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
             Log.i(TAG, "Logged in...");
+
+            //ユーザー情報を取得(id,name,link,education)
+            Request request = Request.newMeRequest(session, new Request.GraphUserCallback(){
+                @Override
+                public void onCompleted(GraphUser user, Response response) {
+                    if(session == Session.getActiveSession()){
+                        if(user != null){
+                            mGraphUser = user;
+                        }
+                    }
+                }
+            });
+            Request.executeBatchAsync(request);
+
+
+
             //ログインに成功するとMain画面へ遷移
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
