@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-        uiHelper = new UiLifecycleHelper(this, callback);
+        uiHelper = new   UiLifecycleHelper(this, callback);
         uiHelper.onCreate(savedInstanceState);
 
         //FB session情報取得
@@ -57,6 +57,8 @@ public class MainActivity extends Activity {
             startActivity(intent);
             finish();
         }
+
+
 
         //ActionBarをGetしてTabModeをセット
         final ActionBar actionBar = getActionBar();
