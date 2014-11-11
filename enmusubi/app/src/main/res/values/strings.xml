@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">enmusubi</string>
-    <!--<string name="title_activity_fblogin">FBLoginActivity</string>-->
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">えん結び</string>
     <string name="action_settings">Settings</string>
     <!-- facebookのappid -->
     <string name="app_id">556606827802550</string>
-    <!--<string name="title_activity_main">MainActivity</string>-->
-    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
-
 </resources>

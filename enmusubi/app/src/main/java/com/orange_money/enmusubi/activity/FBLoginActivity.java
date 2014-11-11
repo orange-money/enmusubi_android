@@ -2,10 +2,12 @@ package com.orange_money.enmusubi.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -33,12 +35,16 @@ public class FBLoginActivity extends Activity {
             onSessionStateChange(session, state, exception);
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fblogin);
-        //
+
+        TextView enmusubiText =(TextView)findViewById(R.id.appTitle);
+        enmusubiText.setTypeface(Typeface.createFromAsset(getAssets(),"TanukiMagic.ttf"));
         LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
+        //学歴取得のパーミッションの設定
         authButton.setPublishPermissions(Arrays.asList("user_education_history"));
 
         uiHelper = new UiLifecycleHelper(this, callback);
