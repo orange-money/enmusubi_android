@@ -14,7 +14,7 @@
 
     <!--タブの背景色設定-->
     <style name="TabTheme" parent="android:Widget.Holo.Light.ActionBar.TabView">
-        <item name="android:background">#FF0000</item>
+        <item name="android:background">@color/red</item>
     </style>
 
 </resources>
