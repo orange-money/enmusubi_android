@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.orange_money.enmusubi.activity.FBLoginActivity">
+    tools:context="com.orange_money.enmusubi.activity.FBLoginActivity"
+    android:background="@drawable/background"
+    >
 
     <TextView
         android:id="@+id/appTitle"
@@ -16,35 +18,14 @@
         android:layout_centerHorizontal="true"
         />
 
-    <ImageView
-        android:id="@+id/red_ribbon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ribbon"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/uniLayout"
-        />
 
     <com.facebook.widget.LoginButton
         android:id="@+id/authButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/uniLayout"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/appTitle"
+        android:layout_marginTop="30px"
         />
-
-    <FrameLayout
-    android:id="@+id/uniLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    >
-    <ImageView
-        android:id="@+id/uniImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/kyotouni" />
-
-</FrameLayout>
 
 </RelativeLayout>
