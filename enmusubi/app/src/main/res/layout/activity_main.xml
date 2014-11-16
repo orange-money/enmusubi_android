@@ -6,7 +6,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.orange_money.enmusubi.activity.MainActivity">
+    tools:context="com.orange_money.enmusubi.activity.MainActivity"
+    android:background="@drawable/background50"
+    >
 
     <FrameLayout
         android:id="@+id/container"

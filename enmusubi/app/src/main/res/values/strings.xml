@@ -5,4 +5,7 @@
     <string name="action_settings">Settings</string>
     <!-- facebookのappid -->
     <string name="app_id">556606827802550</string>
+    <string name="title_activity_text_detail">TextDetailActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

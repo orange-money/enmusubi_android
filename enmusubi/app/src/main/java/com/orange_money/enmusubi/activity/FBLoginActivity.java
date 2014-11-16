@@ -2,12 +2,10 @@ package com.orange_money.enmusubi.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -16,6 +14,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.orange_money.enmusubi.layouts.EnmusubiTextView;
 import com.orange_money.enmusubi.R;
 
 import java.util.Arrays;
@@ -41,8 +40,7 @@ public class FBLoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fblogin);
 
-        TextView enmusubiText =(TextView)findViewById(R.id.appTitle);
-        enmusubiText.setTypeface(Typeface.createFromAsset(getAssets(),"TanukiMagic.ttf"));
+        EnmusubiTextView enmusubiText =(EnmusubiTextView)findViewById(R.id.appTitle);
         LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
         //学歴取得のパーミッションの設定
         authButton.setPublishPermissions(Arrays.asList("user_education_history"));
