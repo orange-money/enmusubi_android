@@ -22,7 +22,9 @@
         <EditText
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            />
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +34,9 @@
         <EditText
             android:id="@+id/editClassName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            />
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +46,9 @@
         <EditText
             android:id="@+id/editTeacherName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            />
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +58,9 @@
         <EditText
             android:id="@+id/editPrice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            />
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,8 +68,11 @@
             font:font="TanukiMagic.ttf"
             />
         <EditText
+            android:id="@+id/editContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            />
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
