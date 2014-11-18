@@ -2,8 +2,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.orange_money.enmusubi.activity.SellTextFragment">
+    tools:context="com.orange_money.enmusubi.activity.SellTextFragment"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    >
 
     <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_name"
+            font:font="TanukiMagic.ttf"
+            />
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/class_name"
+            font:font="TanukiMagic.ttf"
+            />
+        <EditText
+            android:id="@+id/editClassName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/teacher_name"
+            font:font="TanukiMagic.ttf"
+            />
+        <EditText
+            android:id="@+id/editTeacherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            font:font="TanukiMagic.ttf"
+            />
+        <EditText
+            android:id="@+id/editPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/content"
+            font:font="TanukiMagic.ttf"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.orange_money.enmusubi.layouts.EnmusubiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/photo"
+            font:font="TanukiMagic.ttf"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/photoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/selectPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="写真の選択"
+                android:layout_weight="3"
+
+             />
+        </LinearLayout>
+        </LinearLayout>
 
 </FrameLayout>

@@ -49,10 +49,10 @@ public class PurchaseTextFragment extends Fragment {
         item1.setTextTitle("huga");
 
         TextData item2 = new TextData();
-        item1.setTextId(1);
-        item1.setClassName("huga");
-        item1.setTextPrice("1000円");
-        item1.setTextTitle("huga");
+        item2.setTextId(1);
+        item2.setClassName("huga");
+        item2.setTextPrice("1000円");
+        item2.setTextTitle("huga");
 
 
         texts.add(item1);

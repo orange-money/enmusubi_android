@@ -67,15 +67,15 @@ public class MainActivity extends Activity {
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         actionBar.addTab(actionBar.newTab()
-                .setText("教科書を買う")
+                .setIcon(R.drawable.search)
                 .setTabListener(new TabListener<PurchaseTextFragment>(
                         this, "tag1", PurchaseTextFragment.class)));
         actionBar.addTab(actionBar.newTab()
-                .setText("教科書を売る")
+                .setIcon(R.drawable.regist)
                 .setTabListener(new TabListener<SellTextFragment>(
                         this, "tag2", SellTextFragment.class)));
         actionBar.addTab(actionBar.newTab()
-                .setText("販売履歴")
+                .setIcon(R.drawable.history)
                 .setTabListener(new TabListener<HistoryFragment>(
                         this, "tag3", HistoryFragment.class)));
 

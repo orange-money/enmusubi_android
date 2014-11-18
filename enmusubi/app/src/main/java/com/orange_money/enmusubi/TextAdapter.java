@@ -44,6 +44,11 @@ public class TextAdapter extends ArrayAdapter<TextData> {
             mClassName = (TextView) convertView.findViewById(R.id.className);
             mTextPrice = (TextView) convertView.findViewById(R.id.textPrice);
             mDetailImage = (ImageView) convertView.findViewById(R.id.detailImg);
+
+            mTextTitle.setText(textData.getTextTitle());
+            mClassName.setText(textData.getClassName());
+            mTextPrice.setText(textData.getTextPrice());
+
             mDetailImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
