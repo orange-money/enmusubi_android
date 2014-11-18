@@ -12,6 +12,16 @@
         android:layout_height="wrap_content"
         android:text="京大芸人式 日本史"
         font:font="TanukiMagic.ttf"
+        android:layout_weight="1"
+        />
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:background="@drawable/status_togglebutton"
+        android:layout_weight="2"
+        android:textOff=""
+        android:textOn=""
         />
 
 
