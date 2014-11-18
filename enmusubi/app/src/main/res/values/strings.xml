@@ -7,8 +7,11 @@
     <string name="app_id">556606827802550</string>
     <string name="title_activity_text_detail">TextDetailActivity</string>
     <string name="detail">詳細情報</string>
+    <string name="text_name">教科書名</string>
     <string name="class_name">授業名</string>
     <string name="teacher_name">担当教員</string>
+    <string name="price">値段</string>
     <string name="content">備考</string>
+    <string name="photo">教科書の写真</string>
 
 </resources>
