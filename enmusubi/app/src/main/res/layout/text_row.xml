@@ -7,17 +7,17 @@
     >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="4"
+        android:layout_weight="1"
         android:id="@+id/textLayout">
     <com.orange_money.enmusubi.layouts.EnmusubiTextView
         android:textSize="28sp"
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hoge"
+        android:text="hogehoge"
         android:layout_weight="1"
         font:font="TanukiMagic.ttf"
         />
@@ -33,26 +33,27 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:id="@+id/priceLayout"
         >
     <com.orange_money.enmusubi.layouts.EnmusubiTextView
-        android:textSize="36sp"
+        android:textSize="28sp"
         android:id="@+id/textPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="500円"
+        android:text="11500円"
         android:layout_toLeftOf="@+id/detailImg"
         android:layout_weight="1"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
         font:font="TanukiMagic.ttf"
         />
 
     <ImageView
-        android:layout_width="64sp"
+        android:layout_width="match_parent"
         android:layout_height="64sp"
         android:src="@drawable/detail"
         android:id="@+id/detailImg"
