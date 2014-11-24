@@ -26,10 +26,16 @@
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
     <item
+        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-27a1413e6375694614aa24e4537d3a1899b85749.jar"
+        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/android-async-http/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f0a0da9a4d10079614499bb023c3878c398502f6"/>
+    <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-7110caa84314cd201b8db0a567a583172f085a89.jar"
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="bac57aaf78383199fdb4bfbbc18f73af830e9793"/>
+        sha1="b553e541bd7c928b253bae4fe500f840ea622075"/>
 
 </pre-dex-items>

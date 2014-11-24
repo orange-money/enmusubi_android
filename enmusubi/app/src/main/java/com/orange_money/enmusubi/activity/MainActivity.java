@@ -48,10 +48,11 @@ public class MainActivity extends Activity {
                 session = new Session(this);
             }
             Session.setActiveSession(session);
-            if (session.getState().equals(SessionState.CREATED_TOKEN_LOADED)) {
-                //session.openForPublish(getOpenRequest());
-                session.openForRead(new Session.OpenRequest(this));
-            }
+        }
+
+        if (session.getState().equals(SessionState.CREATED_TOKEN_LOADED)) {
+            //session.openForPublish(getOpenRequest());
+            session.openForRead(new Session.OpenRequest(this));
         }
             //ログインしていないならばログイン画面へ遷移
         if (!session.isOpened()) {

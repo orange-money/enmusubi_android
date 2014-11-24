@@ -14,9 +14,20 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.orange_money.enmusubi.layouts.EnmusubiTextView;
 import com.orange_money.enmusubi.R;
 
+import org.apache.http.Header;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 
@@ -67,6 +78,44 @@ public class FBLoginActivity extends Activity {
             });
             Request.executeBatchAsync(request);
 
+            Request.executeMeRequestAsync(session, new Request.GraphUserCallback(){
+
+                        @Override
+                        public void onCompleted(GraphUser user, Response response) {
+                            //ユーザー登録リクエストを投げる
+                            AsyncHttpClient client = new AsyncHttpClient();
+                            String url = getString(R.string.local) + "users";
+
+                            //jsonでpost
+                            JSONObject params = new JSONObject();
+                            try {
+                                params.put("name",user.getName());
+                                params.put("link",user.getLink());
+                                //デバッグ用 education_listから大学情報を抽出する処理が必要
+                                params.put("univ","京都大学");
+                                params.put("user_id",user.getId());
+                                StringEntity entity = new StringEntity(params.toString());
+                                entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+                                client.post(getApplicationContext(),url,entity,"application/json",new AsyncHttpResponseHandler() {
+                                    @Override
+                                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                                    }
+
+                                    @Override
+                                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                                    }
+                                });
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+
 
 
             //ログインに成功するとMain画面へ遷移
@@ -95,6 +144,7 @@ public class FBLoginActivity extends Activity {
     public void onPause() {
         super.onPause();
         uiHelper.onPause();
+
     }
 
     @Override

@@ -278,7 +278,13 @@ public class Request {
             @Override
             public void onCompleted(Response response) {
                 if (callback != null) {
-                    callback.onCompleted(response.getGraphObjectAs(GraphUser.class), response);
+                    try {
+                        callback.onCompleted(response.getGraphObjectAs(GraphUser.class), response);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };
@@ -2377,7 +2383,7 @@ public class Request {
          * @param user     the GraphObject representing the returned user, or null
          * @param response the Response of this request, which may include error information if the request was unsuccessful
          */
-        void onCompleted(GraphUser user, Response response);
+        void onCompleted(GraphUser user, Response response) throws JSONException, UnsupportedEncodingException;
     }
 
     /**

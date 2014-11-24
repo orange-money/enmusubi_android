@@ -13,5 +13,6 @@
     <string name="price">値段</string>
     <string name="content">備考</string>
     <string name="photo">教科書の写真</string>
+    <string name="local">http://10.0.3.2:3000/</string>
 
 </resources>
