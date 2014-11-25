@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.os.Bundle;
 
 /**
  * Created by admin on 14/10/28.
@@ -15,8 +16,17 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
     private final Activity mActivity;
     private final String mTag;
     private final Class<T> mClass;
+    private Bundle mBundle;
 
     //コンストラクタ
+    public TabListener(Activity activity, String tag, Class<T> clz, Bundle bundle) {
+        mActivity = activity;
+        mTag = tag;
+        mClass = clz;
+        mFragment = mActivity.getFragmentManager().findFragmentByTag(mTag);
+        mBundle = bundle;
+    }
+
     public TabListener(Activity activity, String tag, Class<T> clz) {
         mActivity = activity;
         mTag = tag;
@@ -29,6 +39,9 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 
         if (mFragment == null) {
             mFragment = Fragment.instantiate(mActivity, mClass.getName());
+            if(mBundle != null){
+                mFragment.setArguments(mBundle);
+            }
             FragmentManager fm = mActivity.getFragmentManager();
             fm.beginTransaction().add(R.id.container, mFragment, mTag).commit();
         } else {

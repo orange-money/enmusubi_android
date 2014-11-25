@@ -13,12 +13,26 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.orange_money.enmusubi.R;
 import com.orange_money.enmusubi.TabListener;
+import com.orange_money.enmusubi.UserData;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.BufferUnderflowException;
 
 
 public class MainActivity extends Activity {
 
     private final static String TAG = "MainActivity";
-
+    private final static String FILE_NAME = "user_data.dat";
+    private UserData userData;
 
     private UiLifecycleHelper uiHelper;
 
@@ -37,6 +51,7 @@ public class MainActivity extends Activity {
 
         uiHelper = new   UiLifecycleHelper(this, callback);
         uiHelper.onCreate(savedInstanceState);
+
 
         //FB session情報取得
         Session session = Session.getActiveSession();
@@ -61,11 +76,28 @@ public class MainActivity extends Activity {
             finish();
         }
 
-
+        //ログイン画面からintentしてきた場合は,userdata取得
+        Intent loginIntent = getIntent();
+        if(loginIntent.getSerializableExtra("user_data") != null) {
+             userData = (UserData)getIntent().getSerializableExtra("user_data");
+        } else{
+            try {
+                FileInputStream fis = openFileInput(FILE_NAME);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                userData = (UserData)ois.readObject();
+                ois.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
 
         //ActionBarをGetしてTabModeをセット
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("user_data", userData);
+
 
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.search)
@@ -74,7 +106,7 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.regist)
                 .setTabListener(new TabListener<SellTextFragment>(
-                        this, "tag2", SellTextFragment.class)));
+                        this, "tag2", SellTextFragment.class,bundle)));
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.history)
                 .setTabListener(new TabListener<HistoryFragment>(
@@ -117,15 +149,31 @@ public class MainActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
         uiHelper.onDestroy();
+        if(userData != null) {
+            //userDataの保存
+            try {
+                FileOutputStream fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(userData);
+                oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         uiHelper.onSaveInstanceState(outState);
+        outState.putSerializable("user_data", userData);
     }
 
-
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        userData = (UserData)savedInstanceState.getSerializable("user_data");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -159,7 +207,6 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }

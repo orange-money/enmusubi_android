@@ -16,7 +16,7 @@ import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
+import com.orange_money.enmusubi.UserData;
 import com.orange_money.enmusubi.layouts.EnmusubiTextView;
 import com.orange_money.enmusubi.R;
 
@@ -94,7 +94,7 @@ public class FBLoginActivity extends Activity {
                                 //デバッグ用 education_listから大学情報を抽出する処理が必要
                                 params.put("univ","京都大学");
                                 params.put("user_id",user.getId());
-                                StringEntity entity = new StringEntity(params.toString());
+                                StringEntity entity = new StringEntity(params.toString(),HTTP.UTF_8);
                                 entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
                                 client.post(getApplicationContext(),url,entity,"application/json",new AsyncHttpResponseHandler() {
                                     @Override
@@ -113,15 +113,15 @@ public class FBLoginActivity extends Activity {
                                 e.printStackTrace();
                             }
 
+                            UserData userData = new UserData(user.getId(),"京都大学");
+
+                            //ログインに成功するとMain画面へ遷移,userIdと大学名を渡す
+                            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                            intent.putExtra("user_data", userData);
+                            startActivity(intent);
+                            finish();
                         }
                     });
-
-
-
-            //ログインに成功するとMain画面へ遷移
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
-            finish();
         } else if (state.isClosed()) {
             Log.i(TAG, "Logged out...");
         }
