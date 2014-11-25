@@ -12,20 +12,14 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.orange_money.enmusubi.R;
-import com.orange_money.enmusubi.TabListener;
-import com.orange_money.enmusubi.UserData;
+import com.orange_money.enmusubi.adaptaer.TabListener;
+import com.orange_money.enmusubi.data.UserData;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.nio.BufferUnderflowException;
 
 
 public class MainActivity extends Activity {

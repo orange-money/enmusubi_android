@@ -1,4 +1,4 @@
-package com.orange_money.enmusubi;
+package com.orange_money.enmusubi.data;
 
 import android.content.Intent;
 

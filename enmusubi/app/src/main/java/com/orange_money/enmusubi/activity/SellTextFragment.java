@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,17 +19,15 @@ import android.widget.TextView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.orange_money.enmusubi.R;
-import com.orange_money.enmusubi.UserData;
+import com.orange_money.enmusubi.data.UserData;
 
 import org.apache.http.Header;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
@@ -55,7 +52,7 @@ public class SellTextFragment extends Fragment {
     private EditText editPrice;
     private EditText editContent;
     private TextView photoNameView;
-    private Button photoButton;
+    private ImageView photoButton;
     private ImageView textResist;
 
 
@@ -79,7 +76,7 @@ public class SellTextFragment extends Fragment {
         editContent = (EditText)v.findViewById(R.id.editContent);
 
         photoNameView = (TextView)v.findViewById(R.id.photoName);
-        photoButton = (Button)v.findViewById(R.id.selectPhoto);
+        photoButton = (ImageView)v.findViewById(R.id.selectPhoto);
 
 
         textResist = (ImageView)v.findViewById(R.id.textResist);

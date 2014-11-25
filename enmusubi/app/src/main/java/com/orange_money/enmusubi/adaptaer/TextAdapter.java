@@ -1,4 +1,4 @@
-package com.orange_money.enmusubi;
+package com.orange_money.enmusubi.adaptaer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.orange_money.enmusubi.R;
 import com.orange_money.enmusubi.activity.TextDetailActivity;
+import com.orange_money.enmusubi.data.TextData;
 
 import java.util.List;
 

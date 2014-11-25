@@ -16,7 +16,7 @@ import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.orange_money.enmusubi.UserData;
+import com.orange_money.enmusubi.data.UserData;
 import com.orange_money.enmusubi.layouts.EnmusubiTextView;
 import com.orange_money.enmusubi.R;
 

@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.orange_money.enmusubi.R;
-import com.orange_money.enmusubi.TextAdapter;
-import com.orange_money.enmusubi.TextData;
+import com.orange_money.enmusubi.adaptaer.TextAdapter;
+import com.orange_money.enmusubi.data.TextData;
 
 import java.util.ArrayList;
 import java.util.List;

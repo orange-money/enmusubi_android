@@ -1,4 +1,4 @@
-package com.orange_money.enmusubi;
+package com.orange_money.enmusubi.adaptaer;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+
+import com.orange_money.enmusubi.R;
 
 /**
  * Created by admin on 14/10/28.
