@@ -123,7 +123,7 @@ public class SellTextFragment extends Fragment {
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
                             Toast.makeText(view.getContext(), "教科書が投稿されました！", Toast.LENGTH_LONG).show();
-                            
+
                             editTextName.setText("");
                             editClassName.setText("");
                             editPrice.setText("");

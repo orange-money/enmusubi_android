@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/enmusubi.iml" filepath="$PROJECT_DIR$/enmusubi.iml" />
       <module fileurl="file://$PROJECT_DIR$/facebook/facebook.iml" filepath="$PROJECT_DIR$/facebook/facebook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pull-to-refresh/pull-to-refresh.iml" filepath="$PROJECT_DIR$/pull-to-refresh/pull-to-refresh.iml" />
     </modules>
   </component>
 </project>
