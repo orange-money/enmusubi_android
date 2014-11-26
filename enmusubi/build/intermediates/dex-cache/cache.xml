@@ -2,41 +2,11 @@
 <pre-dex-items>
 
     <item
-        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/apache-mime4j-core-0.7.2-13b3b760889ba3164a401fc04b2d77b528b60862.jar"
-        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/libs/apache-mime4j-core-0.7.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="a81264fe0265ebe8fd1d8128aad06dc320de6eef"/>
-    <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-72c94231630a0c2e2778c8c3073c20ee27e339a2.jar"
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
-    <item
-        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/httpcore-4.3.3-5c7a220427bfffddc5b0f4153718fdfc36bdd09e.jar"
-        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/libs/httpcore-4.3.3.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="f91b7a4aadc5cf486df6e4634748d7dd7a73f06d"/>
-    <item
-        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/httpmime-4.3.6-7fbf6fe9bd17459ad79cbf7acfcac3a0ceddf73d.jar"
-        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/libs/httpmime-4.3.6.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="66a39a5e37d5da40fdad6176fc24ef4316e74702"/>
-    <item
-        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-5ba7250545604cfd24435354bcc831afc66a192b.jar"
-        jar="/Applications/eclipse/Android/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
-    <item
-        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-27a1413e6375694614aa24e4537d3a1899b85749.jar"
-        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/android-async-http/unspecified/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="95f2dd747104c58869434e6a475a455125cd0425"/>
     <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-dccd517be2934f36ea26b79159673985766ba84c.jar"
         jar="/Users/admin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
@@ -44,11 +14,29 @@
         revision="20.0.0"
         sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7"/>
     <item
+        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-eb60c2fb92859c88d7de9178fba58b372f27a75d.jar"
+        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/pull-to-refresh/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="ee41e9ce6c3df96ae8580cb2d0b61587ab699266"/>
+    <item
+        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-5ba7250545604cfd24435354bcc831afc66a192b.jar"
+        jar="/Applications/eclipse/Android/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-6cd47f711b46f8e60ae3054d695f8c5ea6837994.jar"
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-27a1413e6375694614aa24e4537d3a1899b85749.jar"
+        jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/android-async-http/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="95f2dd747104c58869434e6a475a455125cd0425"/>
     <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/classes-7110caa84314cd201b8db0a567a583172f085a89.jar"
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"

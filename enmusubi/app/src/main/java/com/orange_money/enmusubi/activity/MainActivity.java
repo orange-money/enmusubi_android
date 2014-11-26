@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.search)
                 .setTabListener(new TabListener<PurchaseTextFragment>(
-                        this, "tag1", PurchaseTextFragment.class)));
+                        this, "tag1", PurchaseTextFragment.class,bundle)));
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.regist)
                 .setTabListener(new TabListener<SellTextFragment>(

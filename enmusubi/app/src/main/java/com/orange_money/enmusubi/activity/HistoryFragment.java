@@ -41,11 +41,11 @@ public class HistoryFragment extends Fragment {
 
         //以下テストデータ
         TextData item1 = new TextData();
-        item1.setTextId(1);
+        item1.setTextId("1");
         item1.setTextTitle("huga");
 
         TextData item2 = new TextData();
-        item2.setTextId(2);
+        item2.setTextId("2");
         item2.setTextTitle("huga");
 
 

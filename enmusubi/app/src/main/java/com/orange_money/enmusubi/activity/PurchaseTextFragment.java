@@ -2,6 +2,7 @@ package com.orange_money.enmusubi.activity;
 
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,9 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.orange_money.enmusubi.R;
 import com.orange_money.enmusubi.adaptaer.TextAdapter;
 import com.orange_money.enmusubi.data.TextData;
+import com.orange_money.enmusubi.data.UserData;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +32,11 @@ import java.util.List;
  *
  */
 public class PurchaseTextFragment extends Fragment {
+
+    private PullToRefreshListView mListView;
+    private List<TextData> mTexts;
+    private TextAdapter mTextAdapter;
+    private UserData mUserData;
 
 
     public PurchaseTextFragment() {
@@ -36,41 +51,88 @@ public class PurchaseTextFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_purchase_text, container, false);
 
+        mTexts = new ArrayList<TextData>();
+        mUserData = (UserData)getArguments().getSerializable("user_data");
+        //項目初期化
+        initializeItems();
+
+
         //この下にテキスト詳細を取得してviewにセットする処理を書く．
-
-        //テキストデータの生成
-       List<TextData> texts = new ArrayList<TextData>();
-
-        //以下テストデータ
-        TextData item1 = new TextData();
-        item1.setTextId(1);
-        item1.setClassName("hoge");
-        item1.setTextPrice("500円");
-        item1.setTextTitle("huga");
-
-        TextData item2 = new TextData();
-        item2.setTextId(1);
-        item2.setClassName("huga");
-        item2.setTextPrice("1000円");
-        item2.setTextTitle("huga");
+        mListView = (PullToRefreshListView)v.findViewById(R.id.textListView);
+        mTextAdapter = new TextAdapter(v.getContext(),mTexts);
+        mListView.setAdapter(mTextAdapter);
 
 
-        texts.add(item1);
-        texts.add(item2);
-        //ここまで
+        mListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+            //上から引っ張った場合
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                initializeItems();
+                new FinishRefresh().execute();
+            }
 
-
-        //viewにテキストデータをセット
-        ListView textView = (ListView)v.findViewById(R.id.textListView);
-
-        TextAdapter textAdapter = new TextAdapter(v.getContext(),texts);
-        textView.setAdapter(textAdapter);
-
-
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+                new FinishRefresh().execute();
+            }
+        });
 
         // Inflate the layout for this fragment
         return v;
     }
 
+    //項目を初期化
+    private void initializeItems(){
+        mTexts.clear();
+       //APIを投げてテキストの最新状態を取得
+        //テキスト取得リクエストを投げる
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.setURLEncodingEnabled(false);
+        String url = getString(R.string.local) + "texts/" + mUserData.getmUniv();
+//        String url = getString(R.string.local) + "texts/" + "京都大学";
+        client.get(url, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
 
+                try {
+
+                    for (int i = 0; i < response.length(); i++) {
+
+                        //取得
+                        JSONObject member = response.getJSONObject(i);
+                        TextData textData = new TextData();
+
+                        textData.setTextId(member.getString("textinfo_id"));
+                        textData.setUserId(member.getString("user_id"));
+                        textData.setClassName(member.getString("lecture_name"));
+                        textData.setTextTitle(member.getString("textbook_name"));
+                        textData.setTextPrice(member.getString("price") + "円");
+                        textData.setTeacherName(member.getString("teacher"));
+                        textData.setComment(member.getString("comment"));
+                        mTexts.add(textData);
+                    }
+                } catch (Exception e) {
+
+                }
+                mTextAdapter.notifyDataSetChanged();
+            }
+        });
+
+    }
+
+    //リスト更新終了
+    private class FinishRefresh extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            mListView.onRefreshComplete();//更新アニメーション終了
+        }
+    }
 }
+
+
