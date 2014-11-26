@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -96,7 +97,7 @@ public class SellTextFragment extends Fragment {
         //新規登録ボタンを押した際の処理
         textResist.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 //テキスト登録リクエストを送る
                 AsyncHttpClient client = new AsyncHttpClient();
                 String url = getString(R.string.local) + "texts";
@@ -121,10 +122,21 @@ public class SellTextFragment extends Fragment {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
+                            Toast.makeText(view.getContext(), "教科書が投稿されました！", Toast.LENGTH_LONG).show();
+                            
+                            editTextName.setText("");
+                            editClassName.setText("");
+                            editPrice.setText("");
+                            editContent.setText("");
+                            editTeacherName.setText("");
+                            photoNameView.setText("");
+                            imageFile = new byte[1];
                         }
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                            Toast.makeText(view.getContext(), "投稿が失敗しました．．．", Toast.LENGTH_LONG).show();
 
                         }
                     });
