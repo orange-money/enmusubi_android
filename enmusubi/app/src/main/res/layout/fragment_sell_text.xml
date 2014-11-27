@@ -28,7 +28,7 @@
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/class_name"
+            android:text="授業名"
             font:font="TanukiMagic.ttf"
             />
         <EditText
@@ -40,7 +40,7 @@
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/teacher_name"
+            android:text="担当教員"
             font:font="TanukiMagic.ttf"
             />
         <EditText

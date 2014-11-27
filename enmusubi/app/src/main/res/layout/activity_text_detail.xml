@@ -42,17 +42,17 @@
                 android:textSize="12sp"
                 />
             <TextView
+                android:id="@+id/text_info"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="hogehogehoge"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"
                 />
             <com.orange_money.enmusubi.layouts.EnmusubiTextView
+                android:id="@+id/text_price"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="300円"
                 android:textColor="@color/red"
                 android:textSize="24sp"
                 android:layout_marginBottom="8dp"
@@ -69,8 +69,8 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:gravity="right"
+                android:orientation="vertical"
+                android:gravity="left"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 >
@@ -82,16 +82,16 @@
                     font:font="TanukiMagic.ttf"
                     />
                 <TextView
+                    android:id="@+id/text_class"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="hage"
                     />
             </LinearLayout>
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="horizontal"
-                    android:gravity="right"
+                    android:orientation="vertical"
+                    android:gravity="left"
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     >
@@ -103,9 +103,9 @@
                         font:font="TanukiMagic.ttf"
                         />
                     <TextView
+                        android:id="@+id/text_teacher"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="hugahuga"
                         />
                 </LinearLayout>
                 </LinearLayout>
@@ -118,6 +118,7 @@
             android:paddingLeft="8dp"
             >
             <ImageView
+                android:id="@+id/text_image"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:src="@drawable/enmusubi_icon"
@@ -133,20 +134,37 @@
         >
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
         <com.orange_money.enmusubi.layouts.EnmusubiTextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             font:font="TanukiMagic.ttf"
             android:text="@string/content"
             />
+            <TextView
+                android:id="@+id/text_comment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
-
-        <TextView
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Hogeeeeeeeeeeeeeeeeeeeeee"
-            />
+            android:layout_weight="2"
+            >
+            <ImageView
+                android:id="@+id/want_button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/want"
+                android:layout_gravity="center"
+                />
+            </LinearLayout>
+
+
         </LinearLayout>
 
 

@@ -2,20 +2,25 @@ package com.orange_money.enmusubi.data;
 
 import android.content.Intent;
 
+import java.io.Serializable;
+
 /**
  * Created by Asuka Shimada on 14/11/14.
  * 教科書一覧表示表示画面のアイテムの情報を保持するクラス
  */
-public class TextData {
+public class TextData implements Serializable {
+    private static final long serialVersionUID = 4555528694944002884L;
     private String textId = "";
     private String userId = "";
     private String textTitle = "";
     private String textPrice = "";
     private String className = "";
     private String comment = "";
-    private String image = "";
     private String univ = "";
     private String teacherName = "";
+    private String fileName = "";
+    private String link = "";
+
 
 
     public TextData() {
@@ -69,14 +74,6 @@ public class TextData {
         this.comment = comment;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public String getUniv() {
         return univ;
     }
@@ -91,6 +88,22 @@ public class TextData {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }
 

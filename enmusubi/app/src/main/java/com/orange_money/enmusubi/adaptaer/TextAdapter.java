@@ -55,7 +55,7 @@ public class TextAdapter extends ArrayAdapter<TextData> {
                 public void onClick(View view) {
                     //教科書詳細画面へインテント
                     Intent intent = new Intent(view.getContext(), TextDetailActivity.class);
-                    intent.putExtra("TextId",textData.getTextId());
+                    intent.putExtra("text_data",textData);
                     view.getContext().startActivity(intent);
                 }
             });

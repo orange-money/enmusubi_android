@@ -43,18 +43,21 @@ public class PurchaseTextFragment extends Fragment {
         // Required empty public constructor
     }
 
-    //ListViewにitemをセットする
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mTexts = new ArrayList<TextData>();
+        mUserData = (UserData)getArguments().getSerializable("user_data");
+        //項目初期化
+        initializeItems();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_purchase_text, container, false);
-
-        mTexts = new ArrayList<TextData>();
-        mUserData = (UserData)getArguments().getSerializable("user_data");
-        //項目初期化
-        initializeItems();
 
 
         //この下にテキスト詳細を取得してviewにセットする処理を書く．
@@ -89,7 +92,7 @@ public class PurchaseTextFragment extends Fragment {
         AsyncHttpClient client = new AsyncHttpClient();
         client.setURLEncodingEnabled(false);
         String url = getString(R.string.local) + "texts/" + mUserData.getmUniv();
-//        String url = getString(R.string.local) + "texts/" + "京都大学";
+
         client.get(url, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -110,6 +113,9 @@ public class PurchaseTextFragment extends Fragment {
                         textData.setTextPrice(member.getString("price") + "円");
                         textData.setTeacherName(member.getString("teacher"));
                         textData.setComment(member.getString("comment"));
+                        textData.setFileName(member.getString("file_name"));
+                        textData.setLink(member.getJSONObject("user").getString("link").toString());
+                        textData.setUniv(member.getString("univ"));
                         mTexts.add(textData);
                     }
                 } catch (Exception e) {
