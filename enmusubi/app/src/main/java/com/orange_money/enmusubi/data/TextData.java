@@ -20,8 +20,15 @@ public class TextData implements Serializable {
     private String teacherName = "";
     private String fileName = "";
     private String link = "";
+    private String status = "";
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public TextData() {
     }

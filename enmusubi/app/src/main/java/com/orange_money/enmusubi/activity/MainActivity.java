@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
         actionBar.addTab(actionBar.newTab()
                 .setIcon(R.drawable.history)
                 .setTabListener(new TabListener<HistoryFragment>(
-                        this, "tag3", HistoryFragment.class)));
+                        this, "tag3", HistoryFragment.class,bundle)));
 
     }
 
