@@ -19,27 +19,17 @@ import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 import com.orange_money.enmusubi.R;
 import com.orange_money.enmusubi.data.UserData;
 
 import org.apache.http.Header;
 import org.apache.http.entity.ContentType;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.ContentBody;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.protocol.HTTP;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
 
@@ -96,7 +86,7 @@ public class SellTextFragment extends Fragment {
         photoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(Intent.createChooser(intent,"select"), REQUEST_IMAGE_SELECT);
             }
@@ -109,7 +99,8 @@ public class SellTextFragment extends Fragment {
             public void onClick(final View view) {
                 //テキスト登録リクエストを送る
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = getString(R.string.local) + "texts";
+//                String url = getString(R.string.local) + "texts";
+                String url = getString(R.string.aws) + "texts";
 
                 //jsonでpost
                 MultipartEntityBuilder entity = MultipartEntityBuilder.create();
@@ -118,7 +109,9 @@ public class SellTextFragment extends Fragment {
 
 
                 try {
-                    entity.addBinaryBody("text[file]",uploadFile,ContentType.create("image/jpeg"),photoNameView.getText().toString());
+                    if(uploadFile != null) {
+                        entity.addBinaryBody("text[file]", uploadFile, ContentType.create("image/jpeg"), photoNameView.getText().toString());
+                    }
                     ContentType textContentType = ContentType.APPLICATION_JSON;
                     entity.addTextBody("text[user_id]",userData.getmUserId().toString(),textContentType);
                     entity.addTextBody("text[lecture_name]",editClassName.getText().toString(),textContentType);

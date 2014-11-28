@@ -68,6 +68,7 @@ public class MainActivity extends Activity {
             Intent intent = new Intent(this,FBLoginActivity.class);
             startActivity(intent);
             finish();
+            return;
         }
 
         //ログイン画面からintentしてきた場合は,userdata取得

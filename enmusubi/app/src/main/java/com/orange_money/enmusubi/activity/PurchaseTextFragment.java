@@ -121,7 +121,8 @@ public class PurchaseTextFragment extends Fragment {
         //テキスト取得リクエストを投げる
         AsyncHttpClient client = new AsyncHttpClient();
         client.setURLEncodingEnabled(false);
-        String url = getString(R.string.local) + "texts/" + mUserData.getmUniv();
+//        String url = getString(R.string.local) + "texts/" + mUserData.getmUniv();
+        String url = getString(R.string.aws) + "texts/" + mUserData.getmUniv();
 
         client.get(url, new JsonHttpResponseHandler() {
             @Override
@@ -196,7 +197,8 @@ public class PurchaseTextFragment extends Fragment {
         this.sView.setIconified(false);
 
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = getString(R.string.local) + "texts/search";
+//        String url = getString(R.string.local) + "texts/search";
+        String url = getString(R.string.aws) + "texts/search";
 
         //jsonでpost
         JSONObject params = new JSONObject();

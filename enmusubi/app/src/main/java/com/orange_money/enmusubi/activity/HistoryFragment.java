@@ -75,7 +75,8 @@ public class HistoryFragment extends Fragment {
         //テキスト取得リクエストを投げる
         AsyncHttpClient client = new AsyncHttpClient();
         client.setURLEncodingEnabled(false);
-        String url = getString(R.string.local) + "users/" + mUserData.getmUserId() + "/history";
+//        String url = getString(R.string.local) + "users/" + mUserData.getmUserId() + "/history";
+        String url = getString(R.string.aws) + "users/" + mUserData.getmUserId() + "/history";
 
         client.get(url, new JsonHttpResponseHandler() {
             @Override

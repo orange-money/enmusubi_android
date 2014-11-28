@@ -84,7 +84,8 @@ public class FBLoginActivity extends Activity {
                         public void onCompleted(GraphUser user, Response response) {
                             //ユーザー登録リクエストを投げる
                             AsyncHttpClient client = new AsyncHttpClient();
-                            String url = getString(R.string.local) + "users";
+//                            String url = getString(R.string.local) + "users";
+                            String url = getString(R.string.aws) + "users";
 
                             //jsonでpost
                             JSONObject params = new JSONObject();

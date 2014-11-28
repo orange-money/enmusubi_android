@@ -65,7 +65,8 @@ public class HistoryAdapter extends ArrayAdapter<TextData> {
                 @Override
                 public void onClick(View view) {
                     AsyncHttpClient client = new AsyncHttpClient();
-                    String url = getContext().getString(R.string.local) + "texts/" + textData.getTextId() + "/detail";
+//                    String url = getContext().getString(R.string.local) + "texts/" + textData.getTextId() + "/detail";
+                    String url = getContext().getString(R.string.aws) + "texts/" + textData.getTextId() + "/detail";
 
                     //jsonでpost
                     JSONObject params = new JSONObject();
