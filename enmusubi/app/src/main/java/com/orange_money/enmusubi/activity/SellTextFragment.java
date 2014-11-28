@@ -19,19 +19,28 @@ import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.orange_money.enmusubi.R;
 import com.orange_money.enmusubi.data.UserData;
 
 import org.apache.http.Header;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.ContentBody;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 
 
 /**
@@ -45,7 +54,7 @@ public class SellTextFragment extends Fragment {
 
     private UserData userData;
 
-//    private File uploadFile;
+    private File uploadFile;
     private byte[] imageFile = new byte[1];
     private EditText editTextName;
     private EditText editClassName;
@@ -103,22 +112,23 @@ public class SellTextFragment extends Fragment {
                 String url = getString(R.string.local) + "texts";
 
                 //jsonでpost
-                JSONObject params = new JSONObject();
+                MultipartEntityBuilder entity = MultipartEntityBuilder.create();
+                entity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+                entity.setCharset(Charset.forName("UTF-8"));
+
+
                 try {
-                    params.put("user_id",userData.getmUserId());
-                    params.put("lecture_name",editClassName.getText().toString());
-                    params.put("textbook_name",editTextName.getText().toString());
-                    params.put("teacher",editTeacherName.getText().toString());
-                    params.put("price",editPrice.getText().toString());
-                    params.put("comment",editContent.getText().toString());
-                    //デバッグ用 education_listから大学情報を抽出する処理が必要
-                    params.put("univ",userData.getmUniv());
+                    entity.addBinaryBody("text[file]",uploadFile,ContentType.create("image/jpeg"),photoNameView.getText().toString());
+                    ContentType textContentType = ContentType.APPLICATION_JSON;
+                    entity.addTextBody("text[user_id]",userData.getmUserId().toString(),textContentType);
+                    entity.addTextBody("text[lecture_name]",editClassName.getText().toString(),textContentType);
+                    entity.addTextBody("text[textbook_name]",editTextName.getText().toString(),textContentType);
+                    entity.addTextBody("text[teacher]",editTeacherName.getText().toString(),textContentType);
+                    entity.addTextBody("text[price]",editPrice.getText().toString(),textContentType);
+                    entity.addTextBody("text[comment]",editContent.getText().toString(),textContentType);
+                    entity.addTextBody("text[univ]",userData.getmUniv(),textContentType);
 
-                    //todo画像投稿に対応
-
-                    StringEntity entity = new StringEntity(params.toString(),HTTP.UTF_8);
-                    entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-                    client.post(view.getContext(),url,entity,"application/json",new AsyncHttpResponseHandler() {
+                    client.post(view.getContext(), url, entity.build(), "application/json", new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
@@ -140,9 +150,7 @@ public class SellTextFragment extends Fragment {
 
                         }
                     });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (UnsupportedEncodingException e) {
+                }  catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -172,6 +180,7 @@ public class SellTextFragment extends Fragment {
                 baos.close();
                 fis.close();
                 imageFile = baos.toByteArray();
+                uploadFile = new File(fileName);
                 photoNameView.setText(fileName);
             }
         }catch (Exception e){

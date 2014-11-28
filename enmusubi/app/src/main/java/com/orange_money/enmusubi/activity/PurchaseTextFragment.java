@@ -113,7 +113,9 @@ public class PurchaseTextFragment extends Fragment {
                         textData.setTextPrice(member.getString("price") + "円");
                         textData.setTeacherName(member.getString("teacher"));
                         textData.setComment(member.getString("comment"));
-                        textData.setFileName(member.getString("file_name"));
+                        if(member.getString("file_name") != null) {
+                            textData.setFileName(member.getString("file_name"));
+                        }
                         textData.setLink(member.getJSONObject("user").getString("link").toString());
                         textData.setUniv(member.getString("univ"));
                         mTexts.add(textData);
