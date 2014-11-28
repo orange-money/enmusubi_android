@@ -6,11 +6,20 @@
     >
 
     <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></SearchView>
 
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textListView"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_below="@+id/searchView"/>
+        </RelativeLayout>
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textListView"
-        android:layout_gravity="center_horizontal|top" />
 </FrameLayout>

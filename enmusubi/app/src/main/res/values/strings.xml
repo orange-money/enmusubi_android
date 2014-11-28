@@ -3,6 +3,7 @@
 
     <string name="app_name">えん結び</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
     <!-- facebookのappid -->
     <string name="app_id">556606827802550</string>
     <string name="title_activity_text_detail">TextDetailActivity</string>

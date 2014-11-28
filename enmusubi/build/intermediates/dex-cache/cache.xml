@@ -24,7 +24,7 @@
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/pull-to-refresh/unspecified/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="987efd444e2bbb182e404938cc343b271d4584ef"/>
+        sha1="92463ed46f228b4754d6004f6c9e5c49e882ba54"/>
     <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-5ba7250545604cfd24435354bcc831afc66a192b.jar"
         jar="/Applications/eclipse/Android/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
@@ -36,7 +36,7 @@
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/enmusubi/android-async-http/unspecified/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="92848184628736ea71736ee4c67a46785b703c05"/>
+        sha1="25824542da498931df293eadf20fa175ee8d5671"/>
     <item
         dex="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-dccd517be2934f36ea26b79159673985766ba84c.jar"
         jar="/Users/admin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
@@ -54,6 +54,6 @@
         jar="/Volumes/DATA/development/apps/enmusubi/enmusubi_android/enmusubi/app/build/intermediates/exploded-aar/com.facebook.android/facebook/3.19.1/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="eeaae44e2b39cfcc88fe3ad3b637e314f5d8374a"/>
+        sha1="8df73dbf64e6fc4aff1cab32172e9605e1b51db8"/>
 
 </pre-dex-items>
